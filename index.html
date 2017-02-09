@@ -37,45 +37,158 @@
 	<section class="auth">
 		<div class="row">
 			<div class="col-md-4 col-sm-4"></div>
-			<div class="col-md-4 col-sm-4">
-				<div class="card padding-10">
-					<div class="body">
-						<h3 class="center-align app-name">Museeq</h3>
-						<form>
-							<div class="input-field">
-				          		<i class="material-icons prefix">account_circle</i>
-								<input id="username" type="text" name="username" class="form-control">
-								<label for="username">Username</label>
-							</div>
+			<div id="myTabContent3" class="tab-content">
+
+				<!--  LOGIN FORM -->
+
+				<div class="col-md-4 col-sm-4 tab-pane fade in active" id="login">
+					<div class="card padding-10">
+						<div class="body">
+							<h3 class="center-align app-name">Museeq</h3>
+							<form>
+								<div class="input-field">
+					          		<i class="material-icons prefix">account_circle</i>
+									<input id="username" type="text" name="username" class="form-control">
+									<label for="username">Username</label>
+								</div>
 
 
-							<div class="input-field">
-				          		<i class="material-icons prefix">lock</i>
-								<input id="password" type="password" name="password" class="form-control">
-								<label for="password">Passwword</label>
-							</div>
+								<div class="input-field">
+					          		<i class="material-icons prefix">lock</i>
+									<input id="password" type="password" name="password" class="form-control">
+									<label for="password">Passwword</label>
+								</div>
 
-							<div class="form-group">
-								<button class="waves-effect waves-light btn btn-block">LOGIN</button>
-							</div>
+								<div class="form-group">
+									<button class="waves-effect waves-light btn btn-block">LOGIN</button>
+								</div>
 
-							<div>
-								<p class="center-align">
-									<a href="#">Forget Password? Reset</a>
-								</p>
-								<p class="center-align">
-									<a href="#signup" data-toggle="tab">Sign Up today to enjoy our service!</a>
-								</p>
-							</div>
-							
-						</form>
+								<div>
+									<p class="center-align">
+										<a href="#">Forget Password? Reset</a>
+									</p>
+									<p class="center-align">
+										<a href="#signup" data-toggle="tab">Sign Up today to enjoy our service!</a>
+									</p>
+								</div>
+								
+							</form>
+						</div>
 					</div>
 				</div>
+
+
+				<!-- ./ LOGIN FORM -->
+
+
+				<!--  SIGNUP FORM -->
+
+				<div class="col-md-4 col-sm-4 tab-pane fade" id="signup">
+					<div class="card padding-10">
+						<div class="body">
+							<h3 class="center-align app-name">Museeq</h3>
+							<form>
+								<div class="input-field">
+					          		<i class="material-icons prefix">person</i>
+									<input id="fullname" type="text" name="fullname" class="form-control">
+									<label for="fullname">Full name</label>
+								</div>
+
+								<div class="input-field">
+					          		<i class="material-icons prefix">email</i>
+									<input id="email" type="email" name="password" class="form-control">
+									<label for="email">Email Address</label>
+								</div>
+
+								<div class="input-field">
+					          		<i class="material-icons prefix">account_circle</i>
+									<input id="username-s" type="text" name="username" class="form-control">
+									<label for="username-s">Username</label>
+								</div>
+
+								<div class="input-field">
+					          		<i class="material-icons prefix">lock</i>
+									<input id="password" type="password" name="password" class="form-control">
+									<label for="password">Password</label>
+								</div>
+
+								<div class="input-field">
+					          		<i class="material-icons prefix">lock</i>
+									<input id="c-password" type="password" name="c_password" class="form-control">
+									<label for="c-password">Confirm password</label>
+								</div>
+
+								<div class="form-group">
+									<button class="waves-effect waves-light btn btn-block">LOGIN</button>
+								</div>
+
+								<div>
+									<p class="center-align">
+										<a href="#">Forget Password? Reset</a>
+									</p>
+									<p class="center-align">
+										<a href="#login" data-toggle="tab">Already a Member</a>
+									</p>
+								</div>
+								
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<!-- ./ SIGNUP FORM -->
+
+
+				<!-- NEXT OPTION -->
+				<div class="col-md-4 col-sm-4 tab-pane fade" id="next-option">
+					<div class="card padding-10">
+						<div class="body">
+							<h3 class="center-align app-name">Museeq</h3>
+							<form>
+								<div class="input-field">
+					          		<i class="material-icons prefix">account_circle</i>
+									<input id="username" type="text" name="username" class="form-control">
+									<label for="username">Username</label>
+								</div>
+
+
+								<div class="input-field">
+					          		<i class="material-icons prefix">lock</i>
+									<input id="password" type="password" name="password" class="form-control">
+									<label for="password">Passwword</label>
+								</div>
+
+								<div class="form-group">
+									<button class="waves-effect waves-light btn btn-block">LOGIN</button>
+								</div>
+
+								<div>
+									<p class="center-align">
+										<a href="#">Forget Password? Reset</a>
+									</p>
+									<p class="center-align">
+										<a href="#signup" data-toggle="tab">Sign Up today to enjoy our service!</a>
+									</p>
+								</div>
+								
+							</form>
+						</div>
+					</div>
+				</div>
+
+
+				<!-- ./ NEXT OPTION -->
+
+
+
+
+
 			</div>
 		</div>
 	</section>
     <script type="text/javascript" src="cordova.js"></script>
 	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 </body>
