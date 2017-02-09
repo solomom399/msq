@@ -1,0 +1,36 @@
+html, body {
+	background: #333;
+	color: #fff;
+	min-width: 100%;
+	min-height: 100%;
+	-webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;
+}
+
+.auth{
+	background: #333;
+	height: 100%;
+	width: 100%;
+	margin-top: 100px;
+}
+
+.btn-block{
+	width: 100%;
+}
+
+.padding-10 {
+	padding: 20px;
+}
+
+.input-field .prefix {
+     color: #000;
+}
+
+.auth .card {
+	min-height: 350px;
+}
+
+.app-name {
+	color: #000;
+}
