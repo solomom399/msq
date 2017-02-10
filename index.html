@@ -41,26 +41,27 @@
 
 				<!--  LOGIN FORM -->
 
-				<div class="col-md-4 col-sm-4 tab-pane fade in active" id="login">
+				<div class="col-md-4 col-sm-4 tab-pane fade in active auth-2" id="login">
 					<div class="card padding-10">
 						<div class="body">
 							<h3 class="center-align app-name">Museeq</h3>
-							<form>
+							<form method="POST" id="login-form">
+
 								<div class="input-field">
 					          		<i class="material-icons prefix">account_circle</i>
-									<input id="username" type="text" name="username" class="form-control">
+									<input id="username" type="text" name="username" class="form-control" required>
 									<label for="username">Username</label>
 								</div>
 
 
 								<div class="input-field">
 					          		<i class="material-icons prefix">lock</i>
-									<input id="password" type="password" name="password" class="form-control">
-									<label for="password">Passwword</label>
+									<input id="password" type="password" name="password" class="form-control" required>
+									<label for="password">Password</label>
 								</div>
 
 								<div class="form-group">
-									<button class="waves-effect waves-light btn btn-block">LOGIN</button>
+									<button class="waves-effect waves-light btn btn-block auth-btn">LOGIN</button>
 								</div>
 
 								<div>
@@ -87,39 +88,47 @@
 					<div class="card padding-10">
 						<div class="body">
 							<h3 class="center-align app-name">Museeq</h3>
-							<form>
+							<form  method="POST" id="signup-form">
 								<div class="input-field">
 					          		<i class="material-icons prefix">person</i>
-									<input id="fullname" type="text" name="fullname" class="form-control">
+									<input id="fullname" type="text" name="fullname" class="form-control" required data-error=".errorTxt1">
 									<label for="fullname">Full name</label>
+									<div class="errorTxt1"></div>
 								</div>
 
 								<div class="input-field">
 					          		<i class="material-icons prefix">email</i>
-									<input id="email" type="email" name="password" class="form-control">
+									<input id="email" type="email" name="email" class="form-control" required>
 									<label for="email">Email Address</label>
 								</div>
 
 								<div class="input-field">
 					          		<i class="material-icons prefix">account_circle</i>
-									<input id="username-s" type="text" name="username" class="form-control">
-									<label for="username-s">Username</label>
+									<input id="username_s" type="text" name="username" class="form-control" required>
+									<label for="username_s">Username</label>
 								</div>
 
 								<div class="input-field">
 					          		<i class="material-icons prefix">lock</i>
-									<input id="password" type="password" name="password" class="form-control">
-									<label for="password">Password</label>
+									<input id="password_s" type="password" name="password" class="form-control" required>
+									<label for="password_s">Password</label>
 								</div>
 
 								<div class="input-field">
 					          		<i class="material-icons prefix">lock</i>
-									<input id="c-password" type="password" name="c_password" class="form-control">
-									<label for="c-password">Confirm password</label>
+									<input id="cpassword" type="password" name="cpassword" class="form-control" required>
+									<label for="cpassword">Confirm password</label>
 								</div>
+
+
+                			    <p>
+                			        <input type="checkbox" class="checkbox" id="cagree" name="cagree"> 
+                			        <label for="cagree">Please agree to our policy</label>
+                			     </p>
+
 
 								<div class="form-group">
-									<button class="waves-effect waves-light btn btn-block">LOGIN</button>
+									<button class="waves-effect waves-light btn btn-block auth-btn">SIGN UP</button>
 								</div>
 
 								<div>
@@ -128,6 +137,7 @@
 									</p>
 									<p class="center-align">
 										<a href="#login" data-toggle="tab">Already a Member</a>
+										<a href="#next-option" data-toggle="tab">Next</a>
 									</p>
 								</div>
 								
@@ -140,26 +150,49 @@
 
 
 				<!-- NEXT OPTION -->
-				<div class="col-md-4 col-sm-4 tab-pane fade" id="next-option">
+				<div class="col-md-4 col-sm-4 tab-pane fade auth-2" id="next-option">
 					<div class="card padding-10">
 						<div class="body">
 							<h3 class="center-align app-name">Museeq</h3>
 							<form>
+
 								<div class="input-field">
-					          		<i class="material-icons prefix">account_circle</i>
-									<input id="username" type="text" name="username" class="form-control">
-									<label for="username">Username</label>
+					          		<i class="material-icons prefix">account_balance</i>
+									<input id="org" type="text" name="org" class="form-control">
+									<label for="org">Name of Organization</label>
 								</div>
 
 
 								<div class="input-field">
-					          		<i class="material-icons prefix">lock</i>
-									<input id="password" type="password" name="password" class="form-control">
-									<label for="password">Passwword</label>
+									<i class="material-icons prefix">account_box</i>
+								    <select>
+								      	<option value="" disabled selected>Designation </option>
+									<option value="Administrator">Administrator</option>
+									<option value="Advertiser">Advertiser</option>
+									<option value="Artiste">Artiste</option>
+									<option value="Artist manager">Artist manager</option>
+									<option value="Dancer">Dancer</option>
+									<option value="Distributor">Distributor</option>
+									<option value="Dj">Dj</option>
+									<option value="Fans">Fan of an Artist</option>
+									<option value="Filmaker">Filmaker</option>
+									<option value="Label">Label</option>
+									<option value="Label manager">Label manager</option>
+									<option value="Manager">Manager</option>
+									<option value="Music buyer">Music buyer</option>
+									<option value="Music Director">Music Director</option>
+									<option value="Music Supervisor">Music Supervisor</option>
+									<option value="Others">Others</option>
+									<option value="Producer">Producer</option>
+									<option value="Publisher">Publisher</option>
+									<option value="Songwriter">Songwriter</option>
+									<option value="Vj">Vj</option>
+									<option value="Writer">Writer</option>
+								    </select>
 								</div>
 
 								<div class="form-group">
-									<button class="waves-effect waves-light btn btn-block">LOGIN</button>
+									<button class="waves-effect waves-light btn btn-block auth-btn">CONTINUE</button>
 								</div>
 
 								<div>
@@ -167,7 +200,8 @@
 										<a href="#">Forget Password? Reset</a>
 									</p>
 									<p class="center-align">
-										<a href="#signup" data-toggle="tab">Sign Up today to enjoy our service!</a>
+										
+										<a href="#login" data-toggle="tab">Login</a>
 									</p>
 								</div>
 								
@@ -190,6 +224,7 @@
 	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 </body>
 
