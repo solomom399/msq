@@ -87,5 +87,28 @@ textarea.materialize-textarea:focus.valid {
 	box-shadow: 0 1px 0 0 #26a69a;
 }
 
+.btn:disabled, .btn[disabled], .btn:hover, .btn:focus {
+	background: #26a69a !important;
+	color: #fff !important;
+}
 
+.tabs.tabs-transparent .tab a,
+.tabs.tabs-transparent .tab.disabled a,
+.tabs.tabs-transparent .tab.disabled a:hover,
+.button-collapse,
+.button-collapse:hover {
+	text-decoration: none;
+	color: #fff;
+	background: transparent;
+}
 
+#test-swipe-1, #test-swipe-2, #test-swipe-3{
+	height: 200px;
+}
+
+@media only screen and (min-width: 601px){
+	nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+		height: 50px;
+		line-height: 50px;
+	}
+}
