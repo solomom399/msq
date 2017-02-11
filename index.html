@@ -29,7 +29,13 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="css/icon.css">
+	<link rel="stylesheet" type="text/css" href="css/sweetalert.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script type="text/javascript">
+		if (localStorage.getItem("seeq") != null) {
+			window.location = "data/home.html"
+		}
+	</script>
 </head>
 
 <body>
@@ -61,7 +67,7 @@
 								</div>
 
 								<div class="form-group">
-									<button class="waves-effect waves-light btn btn-block auth-btn">LOGIN</button>
+									<button type="submit" class="waves-effect waves-light btn btn-block auth-btn">LOGIN</button>
 								</div>
 
 								<div>
@@ -122,7 +128,7 @@
 
 
                 			    <p>
-                			        <input type="checkbox" class="checkbox" id="cagree" name="cagree"> 
+                			        <input type="checkbox" class="filled-in" id="cagree" name="cagree" checked="checked"> 
                 			        <label for="cagree">Please agree to our policy</label>
                 			     </p>
 
@@ -167,27 +173,27 @@
 									<i class="material-icons prefix">account_box</i>
 								    <select>
 								      	<option value="" disabled selected>Designation </option>
-									<option value="Administrator">Administrator</option>
-									<option value="Advertiser">Advertiser</option>
-									<option value="Artiste">Artiste</option>
-									<option value="Artist manager">Artist manager</option>
-									<option value="Dancer">Dancer</option>
-									<option value="Distributor">Distributor</option>
-									<option value="Dj">Dj</option>
-									<option value="Fans">Fan of an Artist</option>
-									<option value="Filmaker">Filmaker</option>
-									<option value="Label">Label</option>
-									<option value="Label manager">Label manager</option>
-									<option value="Manager">Manager</option>
-									<option value="Music buyer">Music buyer</option>
-									<option value="Music Director">Music Director</option>
-									<option value="Music Supervisor">Music Supervisor</option>
-									<option value="Others">Others</option>
-									<option value="Producer">Producer</option>
-									<option value="Publisher">Publisher</option>
-									<option value="Songwriter">Songwriter</option>
-									<option value="Vj">Vj</option>
-									<option value="Writer">Writer</option>
+                                        <option value="Administrator">Administrator</option>
+                                        <option value="Advertiser">Advertiser</option>
+                                        <option value="Artiste">Artiste</option>
+                                        <option value="Artist manager">Artist manager</option>
+                                        <option value="Dancer">Dancer</option>
+                                        <option value="Distributor">Distributor</option>
+                                        <option value="Dj">Dj</option>
+                                        <option value="Fans">Fan of an Artist</option>
+                                        <option value="Filmaker">Filmaker</option>
+                                        <option value="Label">Label</option>
+                                        <option value="Label manager">Label manager</option>
+                                        <option value="Manager">Manager</option>
+                                        <option value="Music buyer">Music buyer</option>
+                                        <option value="Music Director">Music Director</option>
+                                        <option value="Music Supervisor">Music Supervisor</option>
+                                        <option value="Others">Others</option>
+                                        <option value="Producer">Producer</option>
+                                        <option value="Publisher">Publisher</option>
+                                        <option value="Songwriter">Songwriter</option>
+                                        <option value="Vj">Vj</option>
+                                        <option value="Writer">Writer</option>
 								    </select>
 								</div>
 
@@ -225,6 +231,7 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script type="text/javascript" src="js/jquery.validate.js"></script>
+	<script type="text/javascript" src="js/sweetalert.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 </body>
 
