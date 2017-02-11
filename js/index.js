@@ -1,3 +1,42 @@
+// var path = "http://localhost:2000/one-music-server/"
+var path = "http://www.everymantechnologies.com/one-music-server/"
+var sobanjo = function () {
+	var self = this
+
+
+	self.ds = function (formId) {
+		$("#"+formId+" button[type=submit]").attr('disabled', 'disabled')
+	}
+
+	self.es = function (formId) {
+		$("#"+formId+" button[type=submit]").removeAttr('disabled')
+	}
+
+	self.makeUse = function (formData, callback, errorCallback = null) {
+		$.ajax({
+			url: path,
+			type: "POST",
+			data: formData,
+			cache: false,
+		    processData: false,
+		    contentType: false,
+		    dataType: "JSON",
+			success: function(r) {
+				callback(r)
+			},
+		    error: function(XMLHttpRequest, textStatus, errorThrown){
+		        errorCallback()
+		    }
+		})
+	}
+
+
+
+}
+
+var s = new sobanjo()
+
+
 $("#login-form").validate({
 	rules : {
 		username: {
@@ -21,7 +60,23 @@ $("#login-form").validate({
 	    }
     },
     submitHandler: function (form) {
-        console.log($(form).attr('id')+'form ok');
+        var formData = new FormData(form)
+        formData.append('key', 'signin')
+
+        s.ds("login-form")
+
+        s.makeUse(formData, function (resp) {
+        	swal("Good job!", resp, "success");
+        	localStorage.setItem("seeq", "logged_in")
+        	localStorage.setItem("seeq-details", JSON.stringify(resp.user_details))
+        	window.location = "data/home.html"
+        	s.es("login-form")
+        },
+        function () {
+        	swal("There was an Error...Please Try again")
+		    s.es("login-form")
+        })
+        return false
     }
 });
 
@@ -74,3 +129,14 @@ $("#signup-form").validate({
 
 
 $('select').material_select();
+
+
+$('.button-collapse').sideNav({
+  		menuWidth: 300, // Default is 300
+  		edge: 'left', // Choose the horizontal origin
+  		closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+  		draggable: true // Choose whether you can drag to open on touch screens
+	}
+)
+
+$('#tabs-swipe-demo').tabs({ 'swipeable': true });
