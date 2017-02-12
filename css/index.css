@@ -7,6 +7,11 @@ html, body {
     -webkit-user-select: none;
 }
 
+@font-face {
+	font-family: 'scrt';
+	src: url('../fonts/roboto/script_mt.ttf');
+}
+
 .auth{
 	background: #333;
 	height: 100%;
@@ -30,7 +35,17 @@ html, body {
 }
 
 .app-name {
+	font-family: scrt;
 	color: #333;
+}
+
+.sweet-alert h2 {
+	font-family: scrt;
+}
+
+[type="checkbox"].filled-in:disabled:checked+label:after {
+    background-color: #26a69a;
+    border-color: #26a69a;
 }
 
 button{
@@ -96,7 +111,9 @@ textarea.materialize-textarea:focus.valid {
 .tabs.tabs-transparent .tab.disabled a,
 .tabs.tabs-transparent .tab.disabled a:hover,
 .button-collapse,
-.button-collapse:hover {
+.button-collapse:hover,
+.button-collapse:active,
+.button-collapse:focus {
 	text-decoration: none;
 	color: #fff;
 	background: transparent;
