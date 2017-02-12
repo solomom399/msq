@@ -30,6 +30,15 @@ var sobanjo = function () {
 		})
 	}
 
+	self.load = function () {
+		swal({
+			title : "",
+			text : "",
+			imageUrl : "img/load.gif",
+			showConfirmButton : false
+		})
+	}
+
 
 
 }
@@ -64,21 +73,36 @@ $("#login-form").validate({
         formData.append('key', 'signin')
 
         s.ds("login-form")
+        s.load()
 
         s.makeUse(formData, function (resp) {
-        	swal("Good job!", resp, "success");
-        	localStorage.setItem("seeq", "logged_in")
-        	localStorage.setItem("seeq-details", JSON.stringify(resp.user_details))
-        	window.location = "data/home.html"
-        	s.es("login-form")
+        	if (resp.ans == 'true') {
+	        	localStorage.setItem("seeq", "logged_in")
+	        	localStorage.setItem("seeq-details", JSON.stringify(resp.user_details))
+	        	window.location = "data/home.html"
+        	} else {
+        		swal({
+        			title : "",
+	        		text : resp.ans,
+	        		type : "warning",
+	        		confirmButtonClass : 'waves-effect waves-light btn'
+        		})
+        	}
+	        
+	        s.es("login-form")
         },
         function () {
-        	swal("There was an Error...Please Try again")
+        	swal({
+        		title : "",
+        		text : " There was an Error...Please Try again",
+        		type : "error",
+        		confirmButtonClass : 'waves-effect waves-light btn'
+        	})
 		    s.es("login-form")
         })
         return false
     }
-});
+})
 
 
 $("#signup-form").validate({
@@ -123,9 +147,85 @@ $("#signup-form").validate({
 	    }
     },
     submitHandler: function (form) {
-        console.log($(form).attr('id')+'form ok');
+        $("a[point=next-option]").trigger('click')
+        return false
     }
- });
+ })
+
+
+
+
+$("#next-form").validate({
+	rules : {
+		org: {
+			required: true,
+            minlength: 5
+		},
+		designation : 'required'
+	},
+    errorClass: 'invalid',
+    validClass: "valid",
+    errorElement : 'div',
+    errorPlacement: function(error, element) {
+	    var placement = $(element).data('error');
+	    if (placement) {
+	       $(placement).append(error)
+	    } else {
+	       error.insertAfter(element);
+	    }
+    },
+    submitHandler: function (form) {
+    	var username = $("#signup-form").find("input[name=username]").val()
+		var password = $("#signup-form").find("input[name=password]").val()
+		var fullname = $("#signup-form").find("input[name=fullname]").val()
+		var email = $("#signup-form").find("input[name=email]").val()
+
+        var formData = new FormData(form)
+        formData.append('key', 'signup')
+        formData.append('username', username)
+		formData.append('password', password)
+		formData.append('fullname', fullname)
+		formData.append('email', email)
+
+        s.ds("next-form")
+        s.load()
+
+        s.makeUse(formData, function (resp) {
+        	if (resp.success == 'inserted') {
+        		$("a[point=login]").trigger('click')
+        		swal({
+        			title : 'Museeq',
+        			text : 'Thank you for joining us...Click ok to Login',
+        			type : 'success'
+        		})
+        		$("#signup-form").trigger('reset')
+        		$("#next-form").trigger('reset')
+        	} else {
+        		swal({
+        			title : "",
+	        		text : resp.success,
+	        		type : "warning",
+	        		confirmButtonClass : 'waves-effect waves-light btn'
+        		})
+        		$("a[point=signup]").trigger('click')
+        	}
+        	
+        	s.es("next-form")
+        },
+        function () {
+        	swal({
+        		title : "",
+        		text : " There was an Error...Please Try again",
+        		type : "error",
+        		confirmButtonClass : 'waves-effect waves-light btn'
+        	})
+		    s.es("next-form")
+        })
+        return false
+    }
+})
+
+
 
 
 $('select').material_select();
@@ -139,4 +239,8 @@ $('.button-collapse').sideNav({
 	}
 )
 
-$('#tabs-swipe-demo').tabs({ 'swipeable': true });
+$(".sweet-alert button.confirm").addClass('btn')
+
+$('#tabs-swipe-demo').tabs({
+	'swipeable': true
+})
