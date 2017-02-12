@@ -75,7 +75,7 @@
 										<a href="#">Forget Password? Reset</a>
 									</p>
 									<p class="center-align">
-										<a href="#signup" data-toggle="tab">Sign Up today to enjoy our service!</a>
+										<a href="#signup" data-toggle="tab" point="signup">Sign Up today to enjoy our service!</a>
 									</p>
 								</div>
 								
@@ -128,22 +128,19 @@
 
 
                 			    <p>
-                			        <input type="checkbox" class="filled-in" id="cagree" name="cagree" checked="checked"> 
+                			        <input type="checkbox" class="filled-in" id="cagree" name="cagree" checked="checked" disabled> 
                 			        <label for="cagree">Please agree to our policy</label>
                 			     </p>
 
 
-								<div class="form-group">
-									<button class="waves-effect waves-light btn btn-block auth-btn">SIGN UP</button>
+								<div class="form-group right-align">
+									<button class="waves-effect waves-light btn auth-btn">NEXT</button>
 								</div>
 
 								<div>
 									<p class="center-align">
-										<a href="#">Forget Password? Reset</a>
-									</p>
-									<p class="center-align">
-										<a href="#login" data-toggle="tab">Already a Member</a>
-										<a href="#next-option" data-toggle="tab">Next</a>
+										<a href="#login" data-toggle="tab">I'm already a Member</a>
+										<a href="#next-option" data-toggle="tab" point="next-option"></a>
 									</p>
 								</div>
 								
@@ -160,19 +157,18 @@
 					<div class="card padding-10">
 						<div class="body">
 							<h3 class="center-align app-name">Museeq</h3>
-							<form>
+							<form method="POST" id="next-form">
 
 								<div class="input-field">
 					          		<i class="material-icons prefix">account_balance</i>
-									<input id="org" type="text" name="org" class="form-control">
+									<input id="org" type="text" name="name_of_org" class="form-control" required>
 									<label for="org">Name of Organization</label>
 								</div>
 
 
 								<div class="input-field">
 									<i class="material-icons prefix">account_box</i>
-								    <select>
-								      	<option value="" disabled selected>Designation </option>
+								    <select name="designation" id="designation" required>
                                         <option value="Administrator">Administrator</option>
                                         <option value="Advertiser">Advertiser</option>
                                         <option value="Artiste">Artiste</option>
@@ -188,27 +184,25 @@
                                         <option value="Music buyer">Music buyer</option>
                                         <option value="Music Director">Music Director</option>
                                         <option value="Music Supervisor">Music Supervisor</option>
-                                        <option value="Others">Others</option>
+                                        <option value="Others" selected>Others</option>
                                         <option value="Producer">Producer</option>
                                         <option value="Publisher">Publisher</option>
                                         <option value="Songwriter">Songwriter</option>
                                         <option value="Vj">Vj</option>
                                         <option value="Writer">Writer</option>
 								    </select>
+								    <label for="designation">Designation</label>
 								</div>
 
-								<div class="form-group">
-									<button class="waves-effect waves-light btn btn-block auth-btn">CONTINUE</button>
+								<div class="row">
+								<div class="form-group col s6">
+									<a href="#login" data-toggle="tab" point="login"></a>
+									<a class="btn waves-effect waves-teal grey auth-btn" href="#signup" data-toggle="tab">Go back</a>
 								</div>
 
-								<div>
-									<p class="center-align">
-										<a href="#">Forget Password? Reset</a>
-									</p>
-									<p class="center-align">
-										
-										<a href="#login" data-toggle="tab">Login</a>
-									</p>
+								<div class="col s6 right-align">
+									<button class="waves-effect waves-light btn auth-btn">CONTINUE</button>
+								</div>
 								</div>
 								
 							</form>
