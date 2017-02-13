@@ -269,11 +269,6 @@ $('.slides').slick({
     nextArrow: false
 });
 
-navigator.splashscreen.show();
-window.setTimeout(function () {
-    navigator.splashscreen.hide();
-}, 10000);
-
 // ============================================================================
 
 var userobj = JSON.parse(localStorage.getItem('seeq-details'))
