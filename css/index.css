@@ -9,8 +9,10 @@ html, body {
 
 @font-face {
 	font-family: 'scrt';
-	src: url('../fonts/roboto/script_mt.ttf');
+	src: url('../fonts/roboto/script_mt.TTF');
 }
+
+
 
 .auth{
 	background: #333;
@@ -148,6 +150,20 @@ a.white-text {
 	z-index: 1000;
 }
 
+
+#loading {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	overflow: hidden;
+	z-index: 1100;
+	padding: 40% 0%;
+}
+
+.slick-dots {
+  top: 150px;
+  left: 0px;
+}
 
 @media only screen and (min-width: 601px){
 	nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
