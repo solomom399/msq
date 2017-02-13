@@ -165,6 +165,44 @@ a.white-text {
   left: 0px;
 }
 
+
+.nav-tabs {
+	border: none;
+}
+
+.nav-tabs > li > a {
+	color: #fff;
+    text-align: center;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #fff;
+    cursor: default;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    text-align: center;
+}
+
+.navbar-fixed nav ul li.active {
+	background: transparent;
+}
+
+.nav-menu-icon, .nav-menu-icon:hover, .nav-menu-icon:focus {
+	background: transparent;
+	margin-top: -10px;
+}
+
+.nav-tabs > li > a:hover {
+    border: none;
+}
+
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: transparent;
+}
+
+
 @media only screen and (min-width: 601px){
 	nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
 		height: 48px;
