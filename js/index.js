@@ -233,7 +233,7 @@ $(".logout").click(function () {
 	s.load()
 	localStorage.removeItem('seeq')
 	localStorage.removeItem('seeq-details')
-	window.location = "../"
+	window.location = "../index.html"
 })
 
 
