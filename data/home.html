@@ -46,55 +46,60 @@
 			<img src="../icon.png">
 		</center>
 	</div>
-	<!-- <div class="search-div white">
-		<form class="search-form">
-          	<input id="search" class="form-control" type="text" required>
-          	<label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          	<i class="material-icons">close</i>
-      	</form>
-	</div> -->
+	
 
-    <section>
+	<div role="tabpanel">
 		<div class="navbar-fixed">
 	    	<nav class="teal">
 	      		<div class="nav-wrapper">
 			        <div class="nav-content">
-			        	<div class="row">
-			        		<div class="col m10">
-						      	<ul id="tabs-swipe-demo" class="tabs tabs-transparent">
-							      	<li><a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a></li>
-							        <li class="tab"><a class="active" href="#descovery">Descovery</a></li>
-							        <li class="tab"><a href="#library">Library</a></li>
-						      	</ul>
-				      		</div>
-				      		<div class="col m2">
-				      			<a class="white-text nav-menu"><i class="material-icons">search</i></a>
-				      		</div>
-				      	</div>
-				    </div>
-	      		</div>
-	    	</nav>
-	  	</div>
-  	</section>
+						<div class="row">
 
+						  	<ul class="nav nav-tabs" role="tablist" id="tablist">
+						  		<li class="col s2 nav-menu-icon">
+						  			<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+						  		</li>
 
+							    <li role="presentation" class="col s5 active">
+							    	<a href="#descovery" aria-controls="descovery" role="tab" data-toggle="tab">Descovery</a>
+							    </li>
 
-  	<section>
-	  	<div class="tabs-content">
-		  	<div id="descovery" class="col s12">
-		  		<div class="slides">
-				    <div class="carousel-item red" href="#one!"><!-- <img src="../img/logo.png"> --></div>
-				    <div class="carousel-item blue" href="#two!"><!-- <img src="../img/load.gif"> --></div>
-				    <div class="carousel-item green" href="#three!"><!-- <img src="../img/logo.png"> --></div>
-				    <div class="carousel-item pink" href="#four!"><!-- <img src="../img/load.gif"> --></div>
-				    <div class="carousel-item grey" href="#five!"><!-- <img src="../img/logo.png"> --></div>
+							    <li role="presentation" class="col s5">
+							    	<a href="#library" aria-controls="library" role="tab" data-toggle="tab">Library</a>
+							    </li>
+						  	</ul>
+					  	</div>
+					</div>
 				</div>
-		  	</div>
-		  	<div id="library" class="col s12 red">
-		  		
-		  	</div>
+			</nav>
+		</div>
+
+
+	  	<div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active" id="descovery">
+		    	<div class="slides">
+				    <div class="carousel-item red" href="#one!"></div>
+				    <div class="carousel-item blue" href="#two!"></div>
+				    <div class="carousel-item green" href="#three!"></div>
+				    <div class="carousel-item pink" href="#four!"></div>
+				    <div class="carousel-item grey" href="#five!"></div>
+				</div>
+		    </div>
+		    <div role="tabpanel" class="tab-pane yellow" id="library">
+		    	<p>
+		    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		    		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		    		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		    		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		    		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		    		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		    	</p>
+		    </div>
 	  	</div>
-  	</section>
+
+	</div>
+
+ 
 
 
 	<section>
@@ -119,6 +124,7 @@
 
     <script type="text/javascript" src="../cordova.js"></script>
 	<script type="text/javascript" src="../js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.mobile-1.4.5.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../js/materialize.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.validate.js"></script>
