@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--
     Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
@@ -31,6 +30,8 @@
 	<link rel="stylesheet" type="text/css" href="../css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/icon.css">
 	<link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="../css/slick.css">
+    <link rel="stylesheet" type="text/css" href="../css/slick-theme.css">
 	<link rel="stylesheet" type="text/css" href="../css/index.css">
 	<script type="text/javascript">
 		if (localStorage.getItem("seeq") == null) {
@@ -41,48 +42,75 @@
 
 <body>
     
-	<div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-        
-        <div class="nav-content">
-	      <ul id="tabs-swipe-demo" class="tabs tabs-transparent">
-	      	<li><a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a></li>
-	        <li class="tab"><a class="active" href="#test-swipe-1">Test 1</a></li>
-	        <li class="tab"><a href="#test-swipe-2">Test 2</a></li>
-	        <li class="tab"><a href="#test-swipe-3">Disabled Tab</a></li>
-	      </ul>
-	    </div>
-      </div>
-    </nav>
-  </div>
-  <div id="test-swipe-1" class="col s12 blue">Test 1</div>
-  <div id="test-swipe-2" class="col s12 red">Test 2</div>
-  <div id="test-swipe-3" class="col s12 green">Test 3</div>
+	<!-- <div class="search-div white">
+		<form class="search-form">
+          	<input id="search" class="form-control" type="text" required>
+          	<label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          	<i class="material-icons">close</i>
+      	</form>
+	</div> -->
+
+    <section>
+		<div class="navbar-fixed">
+	    	<nav class="teal">
+	      		<div class="nav-wrapper">
+			        <div class="nav-content">
+			        	<div class="row">
+			        		<div class="col m10">
+						      	<ul id="tabs-swipe-demo" class="tabs tabs-transparent">
+							      	<li><a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a></li>
+							        <li class="tab"><a class="active" href="#descovery">Descovery</a></li>
+							        <li class="tab"><a href="#library">Library</a></li>
+						      	</ul>
+				      		</div>
+				      		<div class="col m2">
+				      			<a class="white-text nav-menu"><i class="material-icons">search</i></a>
+				      		</div>
+				      	</div>
+				    </div>
+	      		</div>
+	    	</nav>
+	  	</div>
+  	</section>
+
+
+
+  	<section>
+	  	<div class="tabs-content">
+		  	<div id="descovery" class="col s12">
+		  		<div class="slides">
+				    <div class="carousel-item red" href="#one!"><!-- <img src="../img/logo.png"> --></div>
+				    <div class="carousel-item blue" href="#two!"><!-- <img src="../img/load.gif"> --></div>
+				    <div class="carousel-item green" href="#three!"><!-- <img src="../img/logo.png"> --></div>
+				    <div class="carousel-item pink" href="#four!"><!-- <img src="../img/load.gif"> --></div>
+				    <div class="carousel-item grey" href="#five!"><!-- <img src="../img/logo.png"> --></div>
+				</div>
+		  	</div>
+		  	<div id="library" class="col s12 red">
+		  		
+		  	</div>
+	  	</div>
+  	</section>
 
 
 	<section>
-		<ul id="slide-out" class="side-nav">
+		<ul id="slide-out" class="side-nav teal">
 		    <li>
 		    	<div class="userView">
 			      	<div class="background">
-			        	<img src="images/office.jpg">
+			        	<img src="../img/profile_bg.jpg">
 			      	</div>
-			      	<a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
-			      	<a href="#!name"><span class="white-text name">John Doe</span></a>
-			      	<a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+			      	<a href="#!user"><img class="circle" src="../img/user.jpg"></a>
+			      	<a ><span class="white-text name"></span></a>
+			      	<a ><span class="white-text email"></span></a>
 		    	</div>
 		    </li>
-		    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-		    <li><a href="#!">Second Link</a></li>
-		    <li><div class="divider"></div></li>
-		    <li><a class="subheader">Subheader</a></li>
-		    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+		    <li><a class="waves-effect white-text hnav" href="#!"><i class="material-icons white-text">email</i>Message</a></li>
+		    <li><a class="waves-effect white-text logout" href="javascript:void"><i class="material-icons white-text">exit_to_app</i>Logout</a></li>
 		</ul>
-
-  		
-
 	</section>
+
+
 
 
     <script type="text/javascript" src="../cordova.js"></script>
@@ -91,6 +119,7 @@
 	<script type="text/javascript" src="../js/materialize.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.validate.js"></script>
 	<script type="text/javascript" src="../js/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../js/slick.min.js"></script>
     <script type="text/javascript" src="../js/index.js"></script>
 </body>
 
