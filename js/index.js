@@ -25,7 +25,7 @@ var sobanjo = function () {
 				callback(r)
 			},
 		    error: function(XMLHttpRequest, textStatus, errorThrown){
-		        errorCallback()
+		        errorCallback(XMLHttpRequest, textStatus, errorThrown)
 		    }
 		})
 	}
@@ -91,7 +91,7 @@ $("#login-form").validate({
 	        
 	        s.es("login-form")
         },
-        function () {
+        function (a, b, c) {
         	swal({
         		title : "",
         		text : " There was an Error...Please Try again",
@@ -160,8 +160,7 @@ $("#next-form").validate({
 		org: {
 			required: true,
             minlength: 5
-		},
-		designation : 'required'
+		}
 	},
     errorClass: 'invalid',
     validClass: "valid",
@@ -179,13 +178,17 @@ $("#next-form").validate({
 		var password = $("#signup-form").find("input[name=password]").val()
 		var fullname = $("#signup-form").find("input[name=fullname]").val()
 		var email = $("#signup-form").find("input[name=email]").val()
+		var name_of_org = $("#next-form").find("input[name=name_of_org]").val()
+		var designation = $("#next-form").find("select[name=designation]").val()
 
-        var formData = new FormData(form)
+        var formData = new FormData()
         formData.append('key', 'signup')
         formData.append('username', username)
 		formData.append('password', password)
 		formData.append('fullname', fullname)
 		formData.append('email', email)
+		formData.append('name_of_org', name_of_org)
+		formData.append('designation', designation)
 
         s.ds("next-form")
         s.load()
@@ -212,7 +215,8 @@ $("#next-form").validate({
         	
         	s.es("next-form")
         },
-        function () {
+        function (a, b, c) {
+        	// console.log(a+" "+b+" "+c)
         	swal({
         		title : "",
         		text : " There was an Error...Please Try again",
@@ -225,7 +229,12 @@ $("#next-form").validate({
     }
 })
 
-
+$(".logout").click(function () {
+	s.load()
+	localStorage.removeItem('seeq')
+	localStorage.removeItem('seeq-details')
+	window.location = "../"
+})
 
 
 $('select').material_select();
@@ -234,13 +243,39 @@ $('select').material_select();
 $('.button-collapse').sideNav({
   		menuWidth: 300, // Default is 300
   		edge: 'left', // Choose the horizontal origin
-  		closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+  		closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
   		draggable: true // Choose whether you can drag to open on touch screens
 	}
 )
 
-$(".sweet-alert button.confirm").addClass('btn')
 
-$('#tabs-swipe-demo').tabs({
-	'swipeable': true
+$(".hnav").click(function () {
+	$('.button-collapse').sideNav('hide')
 })
+
+/*$("p").on("swipeleft",function(){
+  $(this).hide();
+});
+*/
+
+$('.slides').slick({
+	autoplay: true,
+    autoplaySpeed: 5000,
+	dots: true,
+	infinite: true,
+	speed: 300,
+	mobileFirst: true,
+    prevArrow: false,
+    nextArrow: false
+});
+
+
+// ============================================================================
+
+var userobj = JSON.parse(localStorage.getItem('seeq-details'))
+var userFullname = userobj.fullname
+var userEmail = userobj.email
+
+
+$(".name").html(userFullname)
+$(".email").html(userEmail)
