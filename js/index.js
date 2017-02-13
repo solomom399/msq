@@ -269,6 +269,10 @@ $('.slides').slick({
     nextArrow: false
 });
 
+navigator.splashscreen.show();
+window.setTimeout(function () {
+    navigator.splashscreen.hide();
+}, 10000);
 
 // ============================================================================
 
