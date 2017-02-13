@@ -258,6 +258,15 @@ $(".hnav").click(function () {
 });
 */
 
+
+
+// ============================================================================
+
+$(window).load(function() {
+    $('#loading').fadeOut(1000);
+})
+
+
 $('.slides').slick({
 	autoplay: true,
     autoplaySpeed: 5000,
@@ -268,6 +277,8 @@ $('.slides').slick({
     prevArrow: false,
     nextArrow: false
 });
+
+
 
 // ============================================================================
 
