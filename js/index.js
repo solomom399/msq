@@ -40,6 +40,12 @@ var sobanjo = function () {
 	}
 
 
+	/*var source = new EventSource("demo_sse.php");
+	source.onmessage = function(event) {
+	    document.getElementById("result").innerHTML += event.data + "<br>";
+	};*/
+
+
 
 }
 
@@ -115,6 +121,11 @@ $("#signup-form").validate({
             required: true,
             email:true
         },
+        phone: {
+        	required: true,
+        	number: true,
+        	minlength: 11
+        },
         username_s: {
         	required: true
         },
@@ -180,6 +191,9 @@ $("#next-form").validate({
 		var email = $("#signup-form").find("input[name=email]").val()
 		var name_of_org = $("#next-form").find("input[name=name_of_org]").val()
 		var designation = $("#next-form").find("select[name=designation]").val()
+		var gender = $("#signup-form").find("input[name=gender]").val()
+		var phone = $("#signup-form").find("input[name=phone]").val()
+
 
         var formData = new FormData()
         formData.append('key', 'signup')
@@ -189,6 +203,8 @@ $("#next-form").validate({
 		formData.append('email', email)
 		formData.append('name_of_org', name_of_org)
 		formData.append('designation', designation)
+		formData.append('gender', gender)
+		formData.append('phone', phone)
 
         s.ds("next-form")
         s.load()
